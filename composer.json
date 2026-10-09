@@ -1,0 +1,49 @@
+{
+  "name": "human-reply/craft-live-chat",
+  "description": "Live chat on every page of your Craft site, answered by your team from Telegram.",
+  "type": "craft-plugin",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "live chat",
+    "chat",
+    "telegram",
+    "customer support",
+    "chat widget"
+  ],
+  "license": "MIT",
+  "homepage": "https://humanreply.app/craft/setup-guide",
+  "authors": [
+    {
+      "name": "Human Reply",
+      "homepage": "https://humanreply.app"
+    }
+  ],
+  "support": {
+    "email": "hello@send.humanreply.app",
+    "docs": "https://humanreply.app/craft/setup-guide",
+    "source": "https://github.com/Human-Reply/craft",
+    "issues": "https://github.com/Human-Reply/craft/issues"
+  },
+  "require": {
+    "php": ">=8.2",
+    "craftcms/cms": "^5.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "humanreply\\livechat\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "human-reply-live-chat",
+    "name": "Human Reply Live Chat",
+    "developer": "Human Reply",
+    "developerUrl": "https://humanreply.app",
+    "developerEmail": "hello@send.humanreply.app",
+    "documentationUrl": "https://humanreply.app/craft/setup-guide",
+    "changelogUrl": "https://raw.githubusercontent.com/Human-Reply/craft/main/CHANGELOG.md",
+    "class": "humanreply\\livechat\\Plugin"
+  }
+}

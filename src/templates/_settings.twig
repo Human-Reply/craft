@@ -1,0 +1,23 @@
+{% import '_includes/forms.twig' as forms %}
+
+{{ forms.autosuggestField({
+  label: 'Site key',
+  instructions: 'The last step of setup at [humanreply.app/start](https://humanreply.app/start) gives it to you, like `rl_7hK2mQ9xW4`. You can also use an environment variable, like `$HUMAN_REPLY_SITE_KEY`. Leave it empty to turn the chat off.',
+  id: 'siteKey',
+  name: 'siteKey',
+  value: settings.siteKey,
+  placeholder: 'rl_…',
+  suggestEnvVars: true,
+  errors: settings.getErrors('siteKey'),
+  required: false,
+}) }}
+
+{% if settings.siteKey starts with '$' and not settings.getParsedSiteKey() and not settings.hasErrors('siteKey') %}
+  <p class="warning has-icon">
+    <span class="icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Warning: </span>
+    <span>{{ settings.siteKey }} isn’t set to a site key on this server, so the chat is off here.</span>
+  </p>
+{% endif %}
+
+<p>How the chat looks, what it says and when your team is available are set in your dashboard at <a href="https://humanreply.app/dashboard" target="_blank" rel="noopener">humanreply.app</a>.</p>
